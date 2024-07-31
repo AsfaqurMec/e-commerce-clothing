@@ -23,3 +23,11 @@
 .hover-underline:hover::after {
     width: 100%;
 }
+
+.acc {
+  display: none;
+}
+
+.shop:hover .acc {
+ display: contents;
+}

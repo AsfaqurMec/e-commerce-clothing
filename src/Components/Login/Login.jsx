@@ -72,7 +72,7 @@ const Login = () => {
                           <Link to="/register"><button className="btn hover:bg-white hover:text-black hover:border-2  bg-black text-white font-semibold text-xl">Register</button></Link>
                           
                       </div>
-                      <div data-aos="zoom-out-up" data-aos-duration="1000" className="card flex-shrink-0 w-full md:w-1/2 rounded-none bg-[#ffffff] border-r-2 border-r-black">
+                      <div data-aos="zoom-out-up" data-aos-duration="1000" className="card flex-shrink-0 w-full lg:w-1/2 rounded-none bg-[#ffffff] lg:border-r-2 border-r-black">
                         
                         
                           <form  onSubmit={handleSubmit(onSubmit)} className="card-body">

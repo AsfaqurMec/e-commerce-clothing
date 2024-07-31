@@ -37,7 +37,7 @@ const [toggle, setToggle] = useState(false);
 
     const navLinks = <>
        
-                       <li  className="mr-3   rounded-md hover:scale-125 transition duration-300 hover-underline"><NavLink to="/shop" >Shop</NavLink></li>
+                       <li  className="mr-3   rounded-md hover:scale-125 transition duration-300 hover-underline shop"><NavLink to="/shop" >Shop</NavLink></li>
                        <li  className="mr-3  rounded-md hover:scale-125 transition duration-300 hover-underline"><NavLink to="/blog" >Blog</NavLink></li>
 
 
@@ -51,7 +51,7 @@ const [toggle, setToggle] = useState(false);
    return (
        <>
         {/* UPPER NAVBAR */}
-       <div className="flex justify-around px-5 bg-white text-black py-2 items-center border-b-2 ">
+       <div className="flex justify-between px-20 bg-white text-black py-2 items-center border-b-2 ">
         <div>
               <h1>OUR PHONE NUMBER : 01945230265</h1>
         </div>
@@ -97,7 +97,7 @@ const [toggle, setToggle] = useState(false);
        </div>
 
        {/* LOWER NAVBAR */}
-       <div className="navbar mb-2 shadow-sm bg-transparent px-1 md:px-2 ">
+       <div className="navbar mb-2 shadow-sm bg-transparent px-1 md:px-2">
                <div className="w-[50%] ">
                    {/* <div className="dropdown">
                        <label tabIndex={0} className="btn btn-ghost text-black p-1 md:hidden">
@@ -139,7 +139,19 @@ const [toggle, setToggle] = useState(false);
   <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
     <ul className=" menu bg-[#fffefef0] border-4 border-red-200 text-base-content min-h-full w-80 p-10 z-50 space-y-5">
       {/* Sidebar content here */}
-     <h1>S</h1>
+      <div className="flex">
+      <input
+                type='text'
+                name='name'
+                id='name'
+                placeholder='Search Here'
+                className='w-full px-3 py-2  rounded-md  focus:outline-rose-500 bg-slate-200 text-gray-900'
+                data-temp-mail-org='0'
+              />
+
+                <IoIosSearch className="h-8 w-8" />
+          </div>
+
       <li  className="mr-3   rounded-md hover:scale-125 transition duration-300 hover-underline"><NavLink to="/shop" >Shop</NavLink></li>
                        <li  className="mr-3  rounded-md hover:scale-125 transition duration-300 hover-underline"><NavLink to="/blog" >Blog</NavLink></li>
 
@@ -210,6 +222,15 @@ const [toggle, setToggle] = useState(false);
                </div>
            </div>
            
+           <div className="absolute  bg-black text-white acc z-50">
+             <h1>ghroughtrklgjr</h1>
+             <h1>ghroughtrklgjr</h1>
+             <h1>ghroughtrklgjr</h1>
+             <h1>ghroughtrklgjr</h1>
+             <h1>ghroughtrklgjr</h1>
+           </div>
+
+
        </>
    );
 };
