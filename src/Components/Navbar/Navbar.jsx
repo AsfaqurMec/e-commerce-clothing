@@ -37,7 +37,7 @@ const [toggle, setToggle] = useState(false);
 
     const navLinks = <>
        
-                       <li  className="mr-3   rounded-md hover:scale-125 transition duration-300 hover-underline shop"><NavLink to="/shop" >Shop</NavLink></li>
+                       <li  className="mr-3  group rounded-md hover:scale-125 transition duration-300 hover-underline shop"><NavLink to="/shop" >Shop</NavLink></li>
                        <li  className="mr-3  rounded-md hover:scale-125 transition duration-300 hover-underline"><NavLink to="/blog" >Blog</NavLink></li>
 
 
@@ -50,6 +50,7 @@ const [toggle, setToggle] = useState(false);
     
    return (
        <>
+       <div className="relative">
         {/* UPPER NAVBAR */}
        <div className="flex justify-between px-20 bg-white text-black py-2 items-center border-b-2 ">
         <div>
@@ -97,7 +98,7 @@ const [toggle, setToggle] = useState(false);
        </div>
 
        {/* LOWER NAVBAR */}
-       <div className="navbar mb-2 shadow-sm bg-transparent px-1 md:px-2">
+       <div className="navbar mb-2 shadow-sm bg-transparent px-1 md:px-2 relative">
                <div className="w-[50%] ">
                    {/* <div className="dropdown">
                        <label tabIndex={0} className="btn btn-ghost text-black p-1 md:hidden">
@@ -222,7 +223,7 @@ const [toggle, setToggle] = useState(false);
                </div>
            </div>
            
-           <div className="absolute  bg-black text-white acc z-50">
+           <div className=" hidden group-hover:block  bg-black text-white">
              <h1>ghroughtrklgjr</h1>
              <h1>ghroughtrklgjr</h1>
              <h1>ghroughtrklgjr</h1>
@@ -230,7 +231,7 @@ const [toggle, setToggle] = useState(false);
              <h1>ghroughtrklgjr</h1>
            </div>
 
-
+           </div>
        </>
    );
 };

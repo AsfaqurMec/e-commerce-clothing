@@ -8,6 +8,7 @@ import { FaThumbsUp } from "react-icons/fa";
 import { FaRocket } from "react-icons/fa";
 import { GiReturnArrow } from "react-icons/gi";
 import { FaShippingFast } from "react-icons/fa";
+import Category from "../Category/Category";
 
 
 const Home = () => {
@@ -19,7 +20,7 @@ const Home = () => {
         <div className="">
             <Banner></Banner>
             <Latest></Latest>
-
+            <Category></Category>
             <div>
             <h1 className='text-center mb-2 mt-10 text-4xl font-bold uppercase'>WHY US</h1>
             <h1 className='text-center w-20 mx-auto h-1 my-4 bg-black'></h1>
