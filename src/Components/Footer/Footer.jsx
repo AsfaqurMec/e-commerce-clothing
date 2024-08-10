@@ -6,9 +6,9 @@ const Footer = () => {
         <div>
           
          <footer className="footer flex flex-col gap-5 lg:flex-row px-12 lg:px-32 py-14 mt-6 bg-black text-base-content">
-         <nav className="w-96">
+         <nav className="w-full md:w-96">
     {/* <img className='w-20 h-20 rounded-sm' src={logo} alt="logo" /> */}
-    <h1 className="font-semibold text-3xl text-white">Trendy & Threads</h1>
+    <h1 className="font-semibold text-3xl text-white">Bostro</h1>
     <p className="font-semibold text-xl text-white">STORE-worldwide fashion store since 1995. We sell over 1000+ branded products on our web-site.</p>
                            <div className='flex gap-2 items-center text-white'>
                            <CiLocationArrow1 className='h-6 w-6'/>

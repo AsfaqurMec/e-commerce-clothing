@@ -80,22 +80,22 @@ const signInUser = (email, password) => {
         setUser(currentUser);
         
        // console.log(currentUser);
-        if (currentUser) {
-          // get token and store client
-          const userInfo = { email: currentUser.email };
-          axiosPublic.post('/jwt', userInfo)
-              .then(res => {
-                  if (res.data.token) {
-                      localStorage.setItem('access-token', res.data.token);
-                      setLoading(false);
-                  }
-              })
-      }
-      else {
-          // TODO: remove token (if token stored in the client side: Local storage, caching, in memory)
-          localStorage.removeItem('access-token');
-          setLoading(false);
-      }
+      //   if (currentUser) {
+      //     // get token and store client
+      //     const userInfo = { email: currentUser.email };
+      //     axiosPublic.post('/jwt', userInfo)
+      //         .then(res => {
+      //             if (res.data.token) {
+      //                 localStorage.setItem('access-token', res.data.token);
+      //                 setLoading(false);
+      //             }
+      //         })
+      // }
+      // else {
+      //     // TODO: remove token (if token stored in the client side: Local storage, caching, in memory)
+      //     localStorage.removeItem('access-token');
+      //     setLoading(false);
+      // }
         
         
     })
@@ -103,9 +103,9 @@ const signInUser = (email, password) => {
         return unsubscribe()
     }
 },[axiosPublic])
-console.log(auth.currentUser?.email);
+//console.log(auth.currentUser?.email);
 const h = auth.currentUser?.email;
-console.log(h);
+//console.log(h);
     const info = {
        createUser,
     signInUser,

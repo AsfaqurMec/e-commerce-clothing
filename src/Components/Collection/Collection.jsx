@@ -10,7 +10,7 @@ const Collection = () => {
     useEffect(() => {
       const getData = async () => {
         const { data } = await axios(
-          `http://localhost:5000/collection`
+          `https://e-commerce-server-eight-fawn.vercel.app/collection`
         )
         
        
@@ -31,8 +31,8 @@ const Collection = () => {
 
     return (
         <>
-         <h1 className='flex justify-start text-lg items-center  my-14 gap-2'><FaHome /> Home / {category.category}</h1>
-        <h1 className='text-center mb-2 mt-10 text-4xl font-bold uppercase'>Latest Products</h1>
+         <h1 className='flex justify-start text-lg items-center  my-10 gap-2'><FaHome /> Home / {category.category}</h1>
+        <h1 className='text-center mb-2 mt-0 text-4xl font-bold uppercase'>{category.category}</h1>
         <h1 className='text-center w-20 mx-auto h-1 my-4 bg-black'></h1>
          <p className='text-center mb-5 text-base font-semibold text-gray-500'>Checkout Our New & Arrival Products</p>
         <div className='grid grid-cols-2 md:grid-cols-3  gap-8'>

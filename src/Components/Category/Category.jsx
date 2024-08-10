@@ -36,8 +36,9 @@ const Category = () => {
         <div className=''>
 
         <Swiper
+        
         slidesPerView={4}
-        spaceBetween={30}
+        spaceBetween={10}
         pagination={{
           clickable: true,
         }}
@@ -47,40 +48,40 @@ const Category = () => {
         
         <SwiperSlide className=''>
         <Link to={`/collection/${women}`} className='flex flex-col justify-center items-center gap-2 mb-10'> 
-          <img className='h-96 transition-transform duration-300 ease-in-out transform hover:scale-110'  src={womens} alt="" />
-          <h1 className='text-4xl font-semibold'>Women</h1>
-          <p className="pb-1 border-b-2 border-b-black text-gray-400 text-base">View Products</p>
+          <img className='h-48 md:h-60 lg:h-96 transition-transform duration-300 ease-in-out transform hover:scale-110'  src={womens} alt="" />
+          <h1 className='text-xl md:text-4xl font-semibold'>Women</h1>
+          <p className="pb-1 border-b-2 border-b-slate-400 text-gray-400 text-xs md:text-base">View Products</p>
           </Link>
         </SwiperSlide >
         
         <SwiperSlide className='flex flex-col justify-center items-center gap-2 mb-10'>
         <Link to={`/collection/${man}`} className='flex flex-col justify-center items-center gap-2 mb-10'> 
-        <img className='h-96 transition-transform duration-300 ease-in-out transform hover:scale-110'  src={mans} alt="" />
-          <h1 className='text-4xl font-semibold'>Man</h1>
-          <p className="pb-1 border-b-2 border-b-black text-gray-400 text-base">View Products</p>
+        <img className='h-48 md:h-60 lg:h-96 transition-transform duration-300 ease-in-out transform hover:scale-110'  src={mans} alt="" />
+          <h1 className='text-xl md:text-4xl font-semibold'>Man</h1>
+          <p className="pb-1 border-b-2 border-b-slate-400 text-gray-400 text-xs md:text-base">View Products</p>
           </Link>
         </SwiperSlide>
 
         <SwiperSlide className='flex flex-col justify-center items-center gap-2 mb-10'>
         <Link to={`/collection/${watch}`} className='flex flex-col justify-center items-center gap-2 mb-10'> 
-        <img className='h-96 transition-transform duration-300 ease-in-out transform hover:scale-110'  src={watchs} alt="" />
-          <h1 className='text-4xl font-semibold'>Watch</h1>
-          <p className="pb-1 border-b-2 border-b-black text-gray-400 text-base">View Products</p>
+        <img className='h-48 md:h-60 lg:h-96 transition-transform duration-300 ease-in-out transform hover:scale-110'  src={watchs} alt="" />
+          <h1 className='text-xl md:text-4xl font-semibold'>Watch</h1>
+          <p className="pb-1 border-b-2 border-b-slate-400 text-gray-400 text-xs md:text-base">View Products</p>
           </Link>
         </SwiperSlide>
 
         <SwiperSlide className='flex flex-col justify-center items-center gap-2 mb-10'>
         <Link to={`/collection/${shoe}`} className='flex flex-col justify-center items-center gap-2 mb-10'> 
-        <img className='h-96 transition-transform duration-300 ease-in-out transform hover:scale-110'  src={shoes} alt="" />
-          <h1 className='text-4xl font-semibold'>Shoe</h1>
-          <p className="pb-1 border-b-2 border-b-black text-gray-400 text-base">View Products</p>
+        <img className='h-48 md:h-60 lg:h-96 transition-transform duration-300 ease-in-out transform hover:scale-110'  src={shoes} alt="" />
+          <h1 className='text-xl md:text-4xl font-semibold'>Shoe</h1>
+          <p className="pb-1 border-b-2 border-b-slate-400 text-gray-400 text-xs md:text-base">View Products</p>
           </Link>
         </SwiperSlide>
 
         <SwiperSlide className='flex flex-col justify-center items-center gap-2 mb-10'>
-        <img className='h-96 transition-transform duration-300 ease-in-out transform hover:scale-110'  src={bag} alt="" />
-          <h1 className='text-4xl font-semibold'>Bag</h1>
-          <p className="pb-1 border-b-2 border-b-black text-gray-400 text-base">View Products</p>
+        <img className='h-48 md:h-60 lg:h-96 transition-transform duration-300 ease-in-out transform hover:scale-110'  src={bag} alt="" />
+          <h1 className='text-xl md:text-4xl font-semibold'>Bag</h1>
+          <p className="pb-1 border-b-2 border-b-slate-400 text-gray-400 text-xs md:text-base">View Products</p>
           
         </SwiperSlide>
         
