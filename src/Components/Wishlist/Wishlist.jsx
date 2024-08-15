@@ -143,7 +143,7 @@ const handleCart =  (title,image,category,price,size) => {
          </div>
        
          <div className="overflow-x-auto min-h-[46vh] mt-10">
-    <table className="table rounded-none bg-[#ffffff]">
+    <table className="table rounded-none bg-[#ffffff]  border-2">
         {/* head */}
         <thead>
             <tr>
@@ -161,15 +161,15 @@ const handleCart =  (title,image,category,price,size) => {
         <tbody>
             {
               message.map(user => 
-                <tr key={user?.title}>
+                <tr key={user?.title} className="">
                 
                 <td className="px-[5px] md:px-3 font-bold text-lg">
-                    <div className="flex gap-5">
+                    <div className="flex gap-5 items-center">
                     <img className="w-12 h-12" src={user.image} alt="" />
                     <div className="flex flex-col gap-3">
-                        <h1 className="text-2xl">{user.title}</h1>
-                        <p>Category : {user?.category}</p>
-                        <h1 className=""> Color Family : {user.color1} {user?.color2} {user?.color3}
+                        <h1 className="text-xl md:text-2xl">{user.title}</h1>
+                        <p className="text-base md:text-xl">Category : {user?.category}</p>
+                        <h1 className="text-base md:text-xl"> Color Family : {user.color1} {user?.color2} {user?.color3}
                        
                     </h1>
                     </div>
@@ -179,11 +179,11 @@ const handleCart =  (title,image,category,price,size) => {
                 
                 
                 
-                <td className="flex  gap-2 flex-row">
+                <td className="flex flex-col gap-2 md:flex-row">
                  
         
                    <button onClick={()=>handleCart(user.title,user.image,user.category,user.price,user.size)}
-                        className="btn md:mr-2 btn-success text-white text-2xl"><FaCartPlus /></button>
+                        className="btn md:mr-2 btn-success text-white  text-2xl"><FaCartPlus /></button>
 
                      <button   onClick={() => handleDelete(user._id)}
                         className="btn md:mr-2 btn-error text-white text-2xl"><MdDelete /></button>

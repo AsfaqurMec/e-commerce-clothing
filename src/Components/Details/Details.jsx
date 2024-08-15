@@ -21,7 +21,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
 
-const Detail = () => {
+const Details = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const id = useParams();
     const { user } = useAuth()
@@ -32,7 +32,7 @@ const Detail = () => {
     useEffect(() => {
       const getData = async () => {
         const { data } = await axios(
-          `https://e-commerce-server-eight-fawn.vercel.app/latest/${id.id}`
+          `https://e-commerce-server-eight-fawn.vercel.app/collections/${id.id}`
         )
         
         setLatest(data)
@@ -63,7 +63,7 @@ const Detail = () => {
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios(
-        `https://e-commerce-server-eight-fawn.vercel.app/latest`
+        `https://e-commerce-server-eight-fawn.vercel.app/collection`
       )
       
      
@@ -230,12 +230,13 @@ const Detail = () => {
   <a  className=""><img onClick={handleToggle}
       src={img1}
       className="h-20 w-20" /></a>
-  {
+      {
         img2 ? <a  className=""><img onClick={handleToggles}
         src={img2}
         className="h-20 w-20" /></a>
        : ""
       }
+  
   {/* <a href="#item3" className="btn btn-xs">3</a>
   <a href="#item4" className="btn btn-xs">4</a> */}
 </div>
@@ -536,4 +537,4 @@ const Detail = () => {
     );
 };
 
-export default Detail;
+export default Details;

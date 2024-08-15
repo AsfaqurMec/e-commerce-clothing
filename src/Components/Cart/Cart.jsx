@@ -124,7 +124,7 @@ const Cart = () => {
          
         <div className="flex flex-col lg:flex-row gap-5">
         <div className="overflow-x-auto min-h-[46vh] w-full lg:w-2/3 bg-[#f6f5f5]">
-    <table className="table rounded-none bg-[#f6f5f5] w-full border-2" >
+    <table className="table rounded-none bg-[#f6f5f5] w-full border-2">
         {/* head */}
         <thead className="border-b-2">
             <tr>
@@ -152,7 +152,7 @@ const Cart = () => {
                         <h1 className="text-2xl">{user.title}</h1>
                         
                         <p>Category : {user?.category}</p>
-                        <div className="flex flex-col md:flex-row gap-8">
+                        <div className="flex flex-col md:flex-row gap-2">
                         <h1 className=""> Color : {user?.color}</h1>
                         <h1 className="">Size : {user?.size}</h1>
                     </div>

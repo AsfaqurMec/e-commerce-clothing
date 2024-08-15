@@ -103,8 +103,8 @@ const axiosPublic = useAxiosPublic();
         <div className='flex justify-center items-center min-h-screen'>
       <div className='flex flex-col w-[80%] p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
         <div className='mb-8 text-center'>
-          <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
-          <p className='text-sm text-gray-400'>Welcome to OneBlood</p>
+          <h1 className='my-3 text-4xl font-bold text-sky-600'>Sign Up</h1>
+          <p className='text-sm text-gray-400'>Welcome to <span className='text-2xl text-black font-bold'>Bostro</span></p>
         </div>
         <form onSubmit={handleSubmit} className='space-y-6'>
           <div className='space-y-4'>
@@ -197,7 +197,7 @@ const axiosPublic = useAxiosPublic();
             <button
            disabled={password !== confirmPassword}
            type='submit'
-          className='bg-rose-500 hover:bg-rose-900 w-full rounded-md py-3 text-white btn'
+          className='bg-black hover:text-black hover:border-black hover:bg-white text-white w-full rounded-md text-xl btn'
          >Register</button>
             
            </div> 

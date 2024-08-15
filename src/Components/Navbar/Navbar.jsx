@@ -13,7 +13,7 @@ import { IoCartOutline } from "react-icons/io5";
 import useAuth from "../../hook/useAuth";
 import axios from "axios";
 
-import img from '../../assets/Screenshot 2024-08-10 111943.png'
+import img from '../../assets/Screenshot 2024-08-14 223840.png'
 
 import { IoWoman } from "react-icons/io5";
 import { IoIosMan } from "react-icons/io";
@@ -133,11 +133,46 @@ const [toggle, setToggle] = useState(false);
         
     </>
     
+
+    const [isSticky, setIsSticky] = useState(false);
+  const [showUpperNavbar, setShowUpperNavbar] = useState(true);
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    const lowerNavbar = document.getElementById('lower-navbar');
+
+    if (lowerNavbar) {
+      const lowerNavbarOffset = lowerNavbar.offsetTop;
+      
+      // Set sticky state for lower navbar
+      setIsSticky(scrollY >= lowerNavbarOffset);
+
+      // Show upper navbar when scrolling back to the top
+      setShowUpperNavbar(scrollY < lowerNavbarOffset);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
+
+
+
+
+
+
+
    return (
        <>
-       <div className="relative ">
+       <div className=" ">
         {/* UPPER NAVBAR */}
-       <div className="flex justify-between px-2 lg:px-16 bg-white text-black py-2 items-center border-b-2 ">
+        
+       <div className="flex justify-center lg:justify-between px-2 lg:px-16 bg-white text-black py-2 md:py-2 items-center w-full border-b-2 ">
         <div>
               <h1 className="text-xs md:text-lg">OUR PHONE NUMBER : 01956230265</h1>
         </div>
@@ -150,29 +185,38 @@ const [toggle, setToggle] = useState(false);
                                <div className="w-10  rounded-full dropdown dropdown-end">
                                <label tabIndex={0} className="btn w-14 bg-transparent shadow-none hover:bg-transparent border-none  text-black p-1">
                                {/* <LuMenuSquare className="md:w-8 w-6 h-6 md:h-7"/> */}
-                               <img className="w-10 rounded-full" src={user?.photoURL || "https://i.ibb.co/8xzVgxd/pngtree-user-icon-png-image-1796659.jpg" } /> 
+                              <Link to="/account"> <img className="w-10 rounded-full" src={user?.photoURL || "https://i.ibb.co/8xzVgxd/pngtree-user-icon-png-image-1796659.jpg" } /> </Link>
                        </label> 
                                </div>
                            
-                           <ul tabIndex={0} className='menu menu-sm dropdown-content mt-1 z-[1000] p-[2px] shadow bg-black rounded-sm w-52'
-           >
+                           {/* <ul tabIndex={0} className='menu menu-sm dropdown-content mt-1 z-[1000] p-[2px] shadow bg-black rounded-sm w-52'
+           > */}
              
              {/* <li className="hover:bg-green-300 rounded-md">
                <Link className="text-base font-semibold" to='/dashboard'>Dashboard</Link>
              </li> */}
              
-            <li> <button onClick={handleLogOut}className="btn btn-sm bg-sky-400 hover:bg-blue-500 text-white rounded-sm  btn-ghost">Logout</button></li>
-           </ul>
+            {/* <li> <button onClick={handleLogOut}className="btn btn-sm bg-sky-400 hover:bg-blue-500 text-white rounded-sm  btn-ghost">Logout</button></li> */}
+           {/* </ul> */}
                            </div>
                         {/* <img className="w-10 rounded-full" src={user?.photoURL || "https://i.ibb.co/8xzVgxd/pngtree-user-icon-png-image-1796659.jpg" } />  */}
                            
                            </div>  
                            :
-                           <div className="flex justify-end">
-                           <Link to='/login'>
-                               <button className="btn btn-sm bg-green-500 hover:bg-blue-500 text-white mr-2  btn-ghost">Login</button>
+                           <div className="lg:flex justify-end hidden">
+                            {
+                              user ? 
+                          
+                           <Link to='/account'>
+                               {/* <button className="btn btn-sm bg-green-500 hover:bg-blue-500 text-white mr-2  btn-ghost">Login</button> */}
+                               <h1 className="flex gap-1 items-center uppercase"> <img className="w-6 rounded-full" src={ "https://i.ibb.co/8xzVgxd/pngtree-user-icon-png-image-1796659.jpg" } />  My Account</h1>
                            </Link>
-                           
+                           :
+                           <Link to='/login'>
+                               {/* <button className="btn btn-sm bg-green-500 hover:bg-blue-500 text-white mr-2  btn-ghost">Login</button> */}
+                               <h1 className="flex gap-1 items-center uppercase"> <img className="w-6 rounded-full" src={ "https://i.ibb.co/8xzVgxd/pngtree-user-icon-png-image-1796659.jpg" } />  My Account</h1>
+                           </Link>
+                            } 
                        </div>
                    }
 
@@ -193,9 +237,13 @@ const [toggle, setToggle] = useState(false);
         </div>
 
        </div>
+       
+       {/* Some placeholder content to create scroll effect */}
+      
 
        {/* LOWER NAVBAR */}
-       <div className="navbar mb-2 shadow-sm bg-white  px-1 md:px-2 z-50 relative">
+       <div >
+       <div  className="navbar mb-2 shadow-sm bg-white  px-1 md:px-2  ">
                <div className="w-[50%] ">
                    {/* <div className="dropdown">
                        <label tabIndex={0} className="btn btn-ghost text-black p-1 md:hidden">
@@ -206,7 +254,7 @@ const [toggle, setToggle] = useState(false);
                        
                        </ul>
                    </div> */}
-<div className="flex justify-start gap-5">
+<div className="flex justify-start gap-1 md:gap-5">
 <div className="drawer  lg:hidden justify-start p-0">
   <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content">
@@ -233,11 +281,11 @@ const [toggle, setToggle] = useState(false);
              
     </label>
   </div>
-  <div className="drawer-side z-50 mt-32">
+  <div className="drawer-side z-50 mt-28 overflow-y-scroll">
   <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-    <ul className=" menu bg-[#0f0f0fd6] border-4 border-red-200 text-base-content min-h-full w-80 py-10 px-5 z-50 space-y-5">
+    <ul className=" menu bg-[#ffffffef] border-2 border-sky-200 text-base-content min-h-[150vh] w-80 py-10 px-5 z-50 space-y-5">
       {/* Sidebar content here */}
-      <div className="flex items-center p-1 mb-10 rounded-md bg-slate-100">
+      <div className="flex items-center p-1 mb-10 rounded-md bg-slate-300">
       <input
                 type='text'
                 name='name'
@@ -253,7 +301,7 @@ const [toggle, setToggle] = useState(false);
           <ul className="menu lg:menu-horizontal bg-base-100 rounded-lg lg:mb-64">
 
           <li>
-    <details open>
+    <details >
       <summary className="text-lg font-bold">Category</summary>
       <ul className="p-0 m-0">
         <li className="p-0 m-0"><Link to={`/collection/${women}`} className="flex justify-start gap-5 mb-5 text-lg w-full hover:bg-orange-600 pl-10 py-2"><IoWoman className="h-10 w-10"/> <h1>WOMEN'S CLOTHING</h1></Link></li>
@@ -285,7 +333,7 @@ const [toggle, setToggle] = useState(false);
 
 
                    <Link to='/' className="btn hover:bg-transparent border-none bg-transparent text-black p-0 font-bold normal-case text-xl md:text-2xl lg:text-5xl" >
-                      <img src={img} className="h-12 w-28 rounded-md" alt="" />
+                      <img src={img} className="h-12 w-32 rounded-md" alt="" />
                       {/* <h1>Bostro</h1> */}
                       </Link>
                  </div>   
@@ -304,17 +352,18 @@ const [toggle, setToggle] = useState(false);
                
                
                 <div className="flex items-center justify-center gap-5 mr-5">
-                <div className="flex items-center p-1 rounded-md bg-sky-300">
+                <div className="flex items-center p-1 rounded-md ">
+                <IoIosSearch className="h-8 w-8 text-black mr-1" />
       <input
                 type='text'
                 name='name'
                 id='name'
-                placeholder='Search Here'
-                className='w-full px-3 py-2  rounded-md  focus:outline-none  text-gray-900'
+                placeholder='Search Here . . . '
+                className='w-full px-3 py-2 border-b-2 border-b-black  rounded-sm  focus:outline-none  text-gray-900'
                 data-temp-mail-org='0'
               />
 
-                <IoIosSearch className="h-8 w-8 text-white" />
+               
           </div>
                  {/* { user ? 
                   <Link to='/wishlist'> <h1 className="indicator"><span className="indicator-item badge mt-1 w-6 text-lg  bg-black text-white">{message.length}</span><CiHeart className="h-8 w-8"/></h1></Link>
@@ -364,7 +413,7 @@ const [toggle, setToggle] = useState(false);
                    } */}
                </div>
            </div>
-           
+           </div>
            <div className=" hidden group-hover:block  bg-black text-white">
              <h1>ghroughtrklgjr</h1>
              <h1>ghroughtrklgjr</h1>
@@ -380,3 +429,6 @@ const [toggle, setToggle] = useState(false);
 
 
 export default Navbar;
+
+
+

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Latest from "../Latest/Latest";
 import Banner from "./Banner";
 import { CiHeart } from "react-icons/ci";
@@ -12,6 +13,8 @@ import axios from "axios";
 import useAuth from "../../hook/useAuth";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+
 
 
 const Home = () => {
@@ -138,7 +141,7 @@ const [massage, setMassage] = useState([]);
 
 
 
-            <div className="w-[100%] md:w-[90%] mx-auto flex justify-around items-center lg:hidden bottom-0 bg-slate-100 fixed py-2 md:py-4">
+            {/* <div className="w-[100%] md:w-[90%] mx-auto flex justify-around items-center lg:hidden bottom-0 bg-slate-100 fixed py-2 md:py-4">
             { user ? 
                   <Link to='/wishlist'> <h1 className="indicator"><span className="indicator-item badge mt-1 w-3 md:w-6 text-xs md:text-lg  bg-black text-white">{message.length}</span><CiHeart className="h-6 md:h-8 w-6 md:w-8"/></h1></Link>
                   : 
@@ -152,7 +155,7 @@ const [massage, setMassage] = useState([]);
                 }
             <img className="w-7 md:w-10 rounded-full" src={user?.photoURL || "https://i.ibb.co/8mshvVT/666201.png" } />     
 
-            </div>
+            </div> */}
         </div>
     );
 };

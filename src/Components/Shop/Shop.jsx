@@ -3,6 +3,10 @@ import axios from 'axios'
  import { CiHeart } from "react-icons/ci";
  import { Link } from 'react-router-dom';
 import { FaHome } from "react-icons/fa";
+import img1 from '../../assets/Screenshot 2024-08-15 194543.png'
+import img2 from '../../assets/Screenshot 2024-08-15 194717.png'
+import img3 from '../../assets/Screenshot 2024-08-15 194925.png'
+import img4 from '../../assets/shoe.png'
 
 const Shop = () => {
 
@@ -54,12 +58,13 @@ const Shop = () => {
          <h1 className='flex justify-start text-lg items-center  my-10 gap-2'><FaHome /> Women</h1>
          <button className='bg-gray-400 py-1 px-2 rounded-md text-white'>See More</button>
             </div>   
-
-         <div className='grid grid-cols-2 md:grid-cols-3  gap-8'>
+         <div className='flex flex-col lg:flex-row items-center lg:justify-between gap-5 lg:gap-0'>
+          <img src={img1} className='w-[600px] h-screen' alt="" />
+         <div className='grid grid-cols-2  gap-8'>
         { women?.map(latest => 
            <Link to={`/latest/${latest._id}`} key={latest._id}><div  className="card rounded-none group">
             <figure className='relative'>
-              <img className='transition-transform duration-300 ease-in-out transform hover:scale-125 w-full h-96'
+              <img className='transition-transform duration-300 ease-in-out transform hover:scale-125 w-[90%] h-60'
                 src={latest.images[0]}
                 alt="Shoes" />
                 <h1 className='add absolute hidden group-hover:block bottom-0 bg-black w-full text-white text-center text-3xl py-3'>Add to Cart</h1>
@@ -74,7 +79,7 @@ const Shop = () => {
         )
         }
         </div>
-
+        </div>
 
          </section>
 
@@ -86,12 +91,13 @@ const Shop = () => {
          <h1 className='flex justify-start text-lg items-center  my-10 gap-2'><FaHome /> Men</h1>
          <button className='bg-gray-400 py-1 px-2 rounded-md text-white'>See More</button>
             </div>   
-
-         <div className='grid grid-cols-2 md:grid-cols-3  gap-8'>
+            <div className='flex flex-col lg:flex-row items-center lg:justify-between gap-5 lg:gap-0'>
+            <img src={img2} className='w-[600px] h-screen' alt="" />
+         <div className='grid grid-cols-2  gap-8'>
         { men?.map(latest => 
            <Link to={`/latest/${latest._id}`} key={latest._id}><div  className="card rounded-none group">
             <figure className='relative'>
-              <img className='transition-transform duration-300 ease-in-out transform hover:scale-125 w-full h-96'
+              <img className='transition-transform duration-300 ease-in-out transform hover:scale-125 w-[90%] h-60'
                 src={latest.images[0]}
                 alt="Shoes" />
                 <h1 className='add absolute hidden group-hover:block bottom-0 bg-black w-full text-white text-center text-3xl py-3'>Add to Cart</h1>
@@ -106,7 +112,7 @@ const Shop = () => {
         )
         }
         </div>
-
+        </div>
 
          </section>
 
@@ -119,11 +125,13 @@ const Shop = () => {
          <button className='bg-gray-400 py-1 px-2 rounded-md text-white'>See More</button>
             </div>   
 
-         <div className='grid grid-cols-2 md:grid-cols-3  gap-8'>
+            <div className='flex flex-col lg:flex-row items-center lg:justify-between gap-5 lg:gap-0'>
+          <img src={img3} className='w-[600px] h-screen' alt="" />
+         <div className='grid grid-cols-2  gap-8'>
         { watch?.map(latest => 
            <Link to={`/latest/${latest._id}`} key={latest._id}><div  className="card rounded-none group">
             <figure className='relative'>
-              <img className='transition-transform duration-300 ease-in-out transform hover:scale-125 w-full h-96'
+              <img className='transition-transform duration-300 ease-in-out transform hover:scale-125 w-[90%] h-60'
                 src={latest.images[0]}
                 alt="Shoes" />
                 <h1 className='add absolute hidden group-hover:block bottom-0 bg-black w-full text-white text-center text-3xl py-3'>Add to Cart</h1>
@@ -138,7 +146,7 @@ const Shop = () => {
         )
         }
         </div>
-
+        </div>
 
          </section>
 
@@ -151,11 +159,13 @@ const Shop = () => {
          <button className='bg-gray-400 py-1 px-2 rounded-md text-white'>See More</button>
             </div>   
 
-         <div className='grid grid-cols-2 md:grid-cols-3  gap-8'>
+            <div className='flex flex-col lg:flex-row items-center lg:justify-between gap-5 lg:gap-0'>
+          <img src={img4} className='w-[600px] h-screen' alt="" />
+         <div className='grid grid-cols-2  gap-8'>
         { shoe?.map(latest => 
            <Link to={`/latest/${latest._id}`} key={latest._id}><div  className="card rounded-none group">
             <figure className='relative'>
-              <img className='transition-transform duration-300 ease-in-out transform hover:scale-125 w-full h-96'
+              <img className='transition-transform duration-300 ease-in-out transform hover:scale-125 w-[90%] h-60'
                 src={latest.images[0]}
                 alt="Shoes" />
                 <h1 className='add absolute hidden group-hover:block bottom-0 bg-black w-full text-white text-center text-3xl py-3'>Add to Cart</h1>
@@ -170,7 +180,7 @@ const Shop = () => {
         )
         }
         </div>
-
+        </div>
 
          </section>
 

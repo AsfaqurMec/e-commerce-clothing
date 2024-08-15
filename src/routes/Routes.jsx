@@ -11,6 +11,8 @@ import Wishlist from "../Components/Wishlist/Wishlist";
 import Cart from "../Components/Cart/Cart";
 import Blog from "../Components/Blog/Blog";
 import Shop from "../Components/Shop/Shop";
+import Account from "../Components/Account/Account";
+import Details from "../Components/Details/Details";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +43,11 @@ const router = createBrowserRouter([
                 
             },
             {
+                path: '/collections/:id',
+                element: <Details></Details>
+                
+            },
+            {
                 path: '/collection/:category',
                 element: <Collection></Collection>
                 
@@ -63,6 +70,11 @@ const router = createBrowserRouter([
             {
                 path: '/shop',
                 element: <Shop></Shop>
+                
+            },
+            {
+                path: '/account',
+                element: <Account></Account>
                 
             },
         ]
