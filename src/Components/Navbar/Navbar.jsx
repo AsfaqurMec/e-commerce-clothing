@@ -29,6 +29,43 @@ import { FaBaby } from "react-icons/fa6";
 
 const Navbar = () => {
 
+ const [search, setSearch] = useState('')
+    const [items, setItems] = useState([]);
+  
+const handle = () => {
+  setItems([]);
+  setSearch('');
+}
+
+
+    useEffect(() => {
+      if (search) {
+        
+      
+      const fetchData = async () => {
+        try {
+          const { data } = await axios.get(`https://e-commerce-server-eight-fawn.vercel.app/search?search=${search}`);
+          setItems(data);
+        } catch (error) {
+          console.error('Error fetching data:', error.message);
+        }
+        
+      };
+      fetchData();
+    } else {
+      setItems([]);
+    }
+      
+    
+    }, [search]);
+
+
+ //console.log(items);
+  
+
+//console.log(items);
+
+
   const women = "women";
   const man = "man";
   const watch = "watch";
@@ -134,34 +171,33 @@ const [toggle, setToggle] = useState(false);
     </>
     
 
-    const [isSticky, setIsSticky] = useState(false);
-  const [showUpperNavbar, setShowUpperNavbar] = useState(true);
+  //   const [isSticky, setIsSticky] = useState(false);
+  // const [showUpperNavbar, setShowUpperNavbar] = useState(true);
 
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    const lowerNavbar = document.getElementById('lower-navbar');
+  // const handleScroll = () => {
+  //   const scrollY = window.scrollY;
+  //   const lowerNavbar = document.getElementById('lower-navbar');
 
-    if (lowerNavbar) {
-      const lowerNavbarOffset = lowerNavbar.offsetTop;
+  //   if (lowerNavbar) {
+  //     const lowerNavbarOffset = lowerNavbar.offsetTop;
       
-      // Set sticky state for lower navbar
-      setIsSticky(scrollY >= lowerNavbarOffset);
+  //     // Set sticky state for lower navbar
+  //     setIsSticky(scrollY >= lowerNavbarOffset);
 
-      // Show upper navbar when scrolling back to the top
-      setShowUpperNavbar(scrollY < lowerNavbarOffset);
-    }
-  };
+  //     // Show upper navbar when scrolling back to the top
+  //     setShowUpperNavbar(scrollY < lowerNavbarOffset);
+  //   }
+  // };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
 
+ 
 
 
 
@@ -169,18 +205,18 @@ const [toggle, setToggle] = useState(false);
 
    return (
        <>
-       <div className=" ">
+       
         {/* UPPER NAVBAR */}
         
        <div className="flex justify-center lg:justify-between px-2 lg:px-16 bg-white text-black py-2 md:py-2 items-center w-full border-b-2 ">
         <div>
-              <h1 className="text-xs md:text-lg">OUR PHONE NUMBER : 01956230265</h1>
+              <h1 className="text-base md:text-lg">OUR PHONE NUMBER : 01956230265</h1>
         </div>
 
         <div className="flex justify-end gap-5 items-center">
           
         {
-                       user? <div className=" flex items-center justify-center gap-2">
+                       user? <div className=" items-center justify-center gap-2 hidden lg:flex">
                         <div className="dropdown block dropdown-end">
                                <div className="w-10  rounded-full dropdown dropdown-end">
                                <label tabIndex={0} className="btn w-14 bg-transparent shadow-none hover:bg-transparent border-none  text-black p-1">
@@ -242,8 +278,8 @@ const [toggle, setToggle] = useState(false);
       
 
        {/* LOWER NAVBAR */}
-       <div >
-       <div  className="navbar mb-2 shadow-sm bg-white  px-1 md:px-2  ">
+       <div className="sticky top-0 z-50 shadow-sm">
+       <div  className="navbar shadow-sm bg-white  px-1 md:px-2  ">
                <div className="w-[50%] ">
                    {/* <div className="dropdown">
                        <label tabIndex={0} className="btn btn-ghost text-black p-1 md:hidden">
@@ -274,7 +310,7 @@ const [toggle, setToggle] = useState(false);
               </svg>   */}
           {/* {
             !toggle ?  */}
-            <GiHamburgerMenu onClick={handleToggle} className='md:w-10 w-5 h-5 md:h-10 text-black' /> 
+            <GiHamburgerMenu onClick={handleToggle} className='md:w-10 w-5 h-5 md:h-10 text-black mx-1' /> 
              {/* :
              <h1 onClick={handleTogle} className="text-3xl ml-1 border-2 px-3 text-black">X</h1>
           } */}
@@ -288,11 +324,13 @@ const [toggle, setToggle] = useState(false);
       <div className="flex items-center p-1 mb-10 rounded-md bg-slate-300">
       <input
                 type='text'
-                name='name'
-                id='name'
+                name='search'
+                
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
                 placeholder='Search Here'
                 className='w-full px-3 py-2  rounded-md  focus:outline-none  text-gray-900'
-                data-temp-mail-org='0'
+                
               />
 
                 <IoIosSearch className="h-8 w-8 " />
@@ -356,11 +394,12 @@ const [toggle, setToggle] = useState(false);
                 <IoIosSearch className="h-8 w-8 text-black mr-1" />
       <input
                 type='text'
-                name='name'
-                id='name'
+                
                 placeholder='Search Here . . . '
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
                 className='w-full px-3 py-2 border-b-2 border-b-black  rounded-sm  focus:outline-none  text-gray-900'
-                data-temp-mail-org='0'
+                
               />
 
                
@@ -414,15 +453,34 @@ const [toggle, setToggle] = useState(false);
                </div>
            </div>
            </div>
-           <div className=" hidden group-hover:block  bg-black text-white">
-             <h1>ghroughtrklgjr</h1>
-             <h1>ghroughtrklgjr</h1>
-             <h1>ghroughtrklgjr</h1>
-             <h1>ghroughtrklgjr</h1>
-             <h1>ghroughtrklgjr</h1>
-           </div>
-
-           </div>
+           {
+            items.length>0 ?
+           <div className="flex justify-center w-full ">
+            
+            
+            <div className="absolute mt-2 p-10 grid grid-cols-1 items-start gap-5 h-[600px] overflow-y-scroll z-50 bg-white md:w-[40%] rounded-md border-2 mx-auto">
+              <h1>Search Result for {search}</h1>
+              { items?.map(latest => 
+             <Link to={`/collections/${latest._id}`} onClick={handle} key={latest._id}><div  className=" flex items-center justify-center w-full">
+              <figure className='relative'>
+                <img className='transition-transform duration-300 ease-in-out transform hover:scale-125 h-24'
+                  src={latest.images[0]}
+                  alt="Shoes" />
+               {/* <h1 className='add absolute hidden group-hover:block bottom-0 bg-black w-full text-white text-center text-3xl py-3'>Add to Cart</h1>
+                  <Link to='#'><h1 className='add absolute top-3 right-2  md:top-5 md:right-5 bg-white hover:bg-slate-200 rounded-full text-3xl'><CiHeart className="h-8 w-8 "/></h1></Link>   */}
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">{latest.title}</h2>
+                <p>${latest.price}</p>
+                
+              </div>
+            </div> </Link> 
+          )
+          } 
+            </div>  
+         </div>
+          : ""
+        } 
        </>
    );
 };

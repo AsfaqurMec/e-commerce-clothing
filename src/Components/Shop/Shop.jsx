@@ -38,9 +38,71 @@ const Shop = () => {
        const  shoe = latest.filter(item=> item.category == 'shoe');
 
     //  console.log(men);
+    // const [search, setSearch] = useState('')
+    // const [items, setItems] = useState([]);
+   
+    // useEffect(() => {
+    //   console.log(search);
       
+    
+    //     const fetchData = async () => {
+    //       const { data } = await axios(
+    //         `http://localhost:5000/search?search=${search}`
+    //       )
+          
+    //       setItems(data);
+    //      // console.log(items);
+    //      // console.log(latest);
+    //     }
+  
+    //     fetchData();
+    //   // } else {
+    //   //   setItems([]);
+    //   //  }
+    // }, [search]);
+
+//     const handleSearch = e => {
+//       e.preventDefault()
+// // console.log(search);
+//       setSearch(searchText)
+//     }
+
+  //   useEffect(() => {
+  //     const fetchData = async () => {
+  //       try {
+  //         const { data } = await axios.get(`https://e-commerce-server-eight-fawn.vercel.app/search?search=${search}`);
+  //         setItems(data);
+  //       } catch (error) {
+  //         console.error('Error fetching data:', error.message);
+  //       }
+  //     };
+    
+  //     fetchData();
+  //   }, [search]);
 
 
+  // console.log(items);
+  
+ // if (query) {
+        // const fetchData = async () => {
+        //   try {
+        //     const response = await axios.get('https://e-commerce-server-eight-fawn.vercel.app/api/search', {
+        //       params: { query },
+        //     });
+        //     setItems(response.data);
+        //   } catch (error) {
+        //     console.error('Error fetching data:', error);
+        //   }
+        // };
+  
+        // fetch(`https://e-commerce-server-eight-fawn.vercel.app/search?query=${query}`)
+        //   .then(response => response.json())
+        //   .then(data => {
+        //     setItems(data);
+        //     // console.log(data);
+        //       // toast.success('Wishlist successfully');
+        //   })
+  
 
 
     return (
@@ -50,8 +112,22 @@ const Shop = () => {
             <h1 className='flex justify-center text-lg items-center gap-2'><FaHome /> Home / Shop</h1>
 
          </div>
-
-
+         {/* <form onSubmit={handleSearch}> */}
+         {/* <input
+                type='text'
+                name='search'
+                // onChange={e => setSearchText(e.target.value)}
+                // value={searchText}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder='Search Here'
+                className='w-full px-3 py-2  rounded-md  focus:outline-none  text-gray-900'
+               
+              /> */}
+             {/* <button type='submit' className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-green-600 rounded-md hover:bg-gray-800 focus:bg-none focus:outline-none rounded-l-none'>
+                Search
+              </button>
+              </form> */}
          <section className='mb-10'>
 
          <div className=' flex justify-between  items-center mx-5'>

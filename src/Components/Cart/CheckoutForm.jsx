@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 const CheckoutForm = (total) => {
    // console.log(total);
-    //console.log(message);
+    
     
 const stripe = useStripe();
 const elements = useElements();
@@ -23,6 +23,13 @@ const { user } = useAuth();
     
 //console.log(inputValue);
  let value = Number(total.total);
+
+ // Create a new Date object
+ const currentDate = new Date();
+
+ // Format the date and time as needed
+ const formattedDate = currentDate.toLocaleDateString(); // e.g., "8/15/2024"
+ const formattedTime = currentDate.toLocaleTimeString(); // e.g., "3:15:30 PM"
 //console.log(total.total);
 
 useEffect(() => {
@@ -97,7 +104,8 @@ const payment = {
     name: user?.displayName,
     price: value,
     transactionId: paymentIntent.id,
-    date: new Date(), // utc date convert. use moment js to 
+    date: formattedDate,
+    time :  formattedTime,// utc date convert. use moment js to 
     status: 'pending',
    
 }

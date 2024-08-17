@@ -106,6 +106,7 @@ const Cart = () => {
       })
       }
        
+// console.log(message);
  
        
     return (
