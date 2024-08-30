@@ -1,8 +1,17 @@
-# React + Vite
+# Bostro! -
+# A responsive E-Commerce Clothing Website using React, MOngoDB, Node Js, Stripe & Express Js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live-link : (https://trendy-threads-clothing.web.app)
 
-Currently, two official plugins are available:
+# Catagory - E-Commerce Clothing Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# features & characteristics of this website
+
+1. It is resposive for all kind of devices.
+2. Here you can find us of all over Bangladesh.
+3. We have a payment option(Stripe).
+4. Allow users to delete their added items.
+5. User can easily store their data on MongoDB.
+6. user can pay by Card here.
+7. Admin have access to all things - can (delete, edit, block) 
+# Author - Asfaqur Rahman
