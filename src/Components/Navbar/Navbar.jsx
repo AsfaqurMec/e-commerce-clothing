@@ -38,7 +38,7 @@ const handle = () => {
   setSearch('');
 }
 
-console.log(search);
+// console.log(search);
 
     useEffect(() => {
       if (search) {
@@ -258,8 +258,10 @@ const [toggle, setToggle] = useState(false);
   </div>
   <div className="drawer-side z-50 mt-28 overflow-y-scroll">
   <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-    <ul className=" menu bg-[#ffffffef] border-2 border-sky-200 text-base-content min-h-[150vh] w-80 py-10 px-5 z-50 space-y-5">
+    <ul className=" menu bg-[#ffffff] border-2 border-sky-200 text-base-content min-h-[150vh] w-80 pb-10 pt-2 px-5 z-50 space-y-5">
       {/* Sidebar content here */}
+      {/* <h1 htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay bg-black text-white pl-3 py-1 rounded-lg text-xl w-9">X</h1> */}
+      <li className="flex flex-row "><label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay  py-1 pl-[11px] w-9  rounded-full bg-[#08b0f8] hover:bg-[#0838f8] text-white text-xl font-bold">X</label></li>
       <div className="flex items-center p-1 mb-10 rounded-md bg-slate-300">
       <input
                 type='text'
@@ -279,7 +281,7 @@ const [toggle, setToggle] = useState(false);
 
           <li>
     <details >
-      <summary className="text-lg font-bold">Category</summary>
+      <summary className="text-lg font-bold border-2 hover:bg-sky-200 ">Category</summary>
       <ul className="p-0 m-0">
         <li className="p-0 m-0"><Link to={`/collection/${women}`} className="flex justify-start gap-5 mb-5 text-lg w-full hover:bg-orange-600 pl-10 py-2"><IoWoman className="h-10 w-10"/> <h1>WOMEN'S CLOTHING</h1></Link></li>
         <li className="p-0 m-0"><Link to={`/collection/${man}`} className="flex gap-5 mb-5 text-lg w-full hover:bg-orange-600 pl-10 py-2"><IoIosMan className="h-10 w-10"/> MEN'S CLOTHING</Link></li>
@@ -299,11 +301,11 @@ const [toggle, setToggle] = useState(false);
 
 
 
-      <li  className="mr-3  rounded-md hover:scale-105 transition duration-300 bg-white text-center text-xl font-medium "><NavLink to="/shop" >Shop</NavLink></li>
-                       <li  className="mr-3   rounded-md hover:scale-105 transition duration-300 bg-white text-center text-xl font-medium"><NavLink to="/blog" >Blog</NavLink></li>
+      <li  className="mr-3  rounded-md hover:scale-105 border-2 hover:bg-sky-200 transition duration-300 bg-white text-center text-xl font-medium "><NavLink to="/shop" >Shop</NavLink></li>
+                       <li  className="mr-3 border-2 hover:bg-sky-200 rounded-md hover:scale-105 transition duration-300 bg-white text-center text-xl font-medium"><NavLink to="/blog" >Blog</NavLink></li>
 
 
-                      <li  className="mr-3   rounded-md hover:scale-105 transition duration-300 bg-white text-center text-xl font-medium"><NavLink to="/contact" className="text-center">Contact Us</NavLink></li>
+                      <li  className="mr-3 border-2 hover:bg-sky-200  rounded-md hover:scale-105 transition duration-300 bg-white text-center text-xl font-medium"><NavLink to="/contact" className="text-center">Contact Us</NavLink></li>
     </ul>
   </div>
 </div>
