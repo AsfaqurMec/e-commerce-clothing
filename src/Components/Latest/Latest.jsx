@@ -13,7 +13,7 @@ const Latest = () => {
   //const axiospublic = useAxiosPublic();
      const { user } = useAuth();
     // console.log(user);
-     
+    const [load, setLoad] = useState(false);
     const [loading, setLoading] = useState(true);
     const [latest, setLatest] = useState([]);
     useEffect(() => {
@@ -37,7 +37,7 @@ const Latest = () => {
 
    // const [latest, setLatest] = useState([]);
    const handleAdd = async (id) => {
-    
+   // setLoad(true);
   // URL of the API endpoint
   const url = `https://e-commerce-server-eight-fawn.vercel.app/latest/${id}`;
 
@@ -78,6 +78,7 @@ if (user) {
         .then(response => response.json())
         .then(data => {
           // console.log(data);
+         // setLoad(false);
             toast.success('Wishlist successfully');
         })
 
@@ -115,8 +116,14 @@ if (user) {
                 <img className='transition-transform duration-300 ease-in-out transform hover:scale-125 h-64 md:h-full'
                   src={latest.images[0]}
                   alt="Shoes" />
-               <h1 className='add absolute hidden group-hover:block bottom-0 bg-black w-full text-white text-center text-3xl py-3'>Add to Cart</h1>
-                 <Link to='#'><h1 onClick={()=>handleAdd(latest._id)} className='add absolute top-3 right-2  md:top-5 md:right-5 bg-white hover:bg-slate-200 rounded-full text-3xl'><CiHeart className="h-8 w-8 "/></h1></Link> 
+               {/* <h1 className='add absolute hidden group-hover:block bottom-0 bg-black w-full text-white text-center text-3xl py-3'>Add to Cart</h1> */}
+                 <Link to='#'><h1 onClick={()=>handleAdd(latest._id)} className='add absolute top-3 right-2  md:top-5 md:right-5 bg-white hover:bg-slate-200 rounded-full text-3xl'>
+                 {
+                  load ? <span className="loading loading-spinner text-info"></span>
+                 : <CiHeart className="h-8 w-8 "/>
+                 }
+                  
+                  </h1></Link> 
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{latest.title}</h2>

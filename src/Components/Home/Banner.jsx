@@ -16,8 +16,12 @@ import { GiShoppingBag } from "react-icons/gi";
 import { GiRunningShoe } from "react-icons/gi";
 import { IoDiamond } from "react-icons/io5";
 import { FaBaby } from "react-icons/fa6";
+import './Banner.css';
+
+
 
 const Banner = () => {
+  //https://i.ibb.co/5Mh71sb/Screenshot-2024-08-01-193713.pnghttps://i.ibb.co/MsRhtd6/Screenshot-2024-08-01-235858.png
 
   const women = "women";
   const man = "man";
@@ -55,10 +59,11 @@ const Banner = () => {
         navigation={false}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper rounded-none"
-      >
-        <SwiperSlide className='rounded-sm w-full h-[60vh] md:h-[61vh] bg-cover bg-center bg-no-repeat bg-[url("https://i.ibb.co/5Mh71sb/Screenshot-2024-08-01-193713.pnghttps://i.ibb.co/MsRhtd6/Screenshot-2024-08-01-235858.png")]'>
+      > 
+      
+        <SwiperSlide className='rounded-sm w-full h-[60vh] md:h-[61vh] bg-cover bg-center bg-no-repeat bg-[url("../../assets/Screenshot\ 2024-08-01\ 235858.png")]'>
            
-            <div className='w-full gap-2 md:gap-4 h-[60vh] md:h-[61vh] flex flex-col justify-center items-start pl-8 bg-cover bg-center bg-no-repeat bg-[url("https://i.ibb.co/MsRhtd6/Screenshot-2024-08-01-235858.png")]'>
+            <div className='w-full gap-2 md:gap-4 h-[60vh] md:h-[61vh] flex flex-col justify-center items-start pl-8 bg-cover bg-center bg-no-repeat bg-[url("../../assets/Screenshot\ 2024-08-01\ 235858.png")]'>
             
             <h1 className='  text-white font-bold text-5xl mb-1 md:text-7xl space-y-2 md:space-y-6'>NEW</h1>
             <h1 className='  text-white font-bold text-5xl  md:text-7xl space-y-2 md:space-y-6'>ARRIVALS</h1>
@@ -72,9 +77,9 @@ const Banner = () => {
             </div>
         </SwiperSlide>
         
-        <SwiperSlide className='rounded-sm w-full h-[60vh] md:h-[61vh] bg-cover bg-center bg-no-repeat bg-[url("https://i.ibb.co/YhB3dRR/Screenshot-2024-08-02-000407.png")]'>
+        <SwiperSlide className='rounded-sm w-full h-[60vh] md:h-[61vh] bg-cover bg-center bg-no-repeat '>
            
-            <div className='w-full gap-1 md:gap-4 h-[60vh] md:h-[61vh] flex flex-col justify-center items-start pl-8 bg-cover bg-center bg-no-repeat bg-[url("https://i.ibb.co/YhB3dRR/Screenshot-2024-08-02-000407.png")]'>
+            <div className='w-full gap-1 md:gap-4 h-[60vh] md:h-[61vh] flex flex-col justify-center items-start pl-8 bg-cover bg-center bg-no-repeat bg-[url("../../assets/Screenshot\ 2024-07-31\ 002307.png")]'>
             
             <h1 className='  text-white font-bold text-5xl mb-1 md:text-7xl space-y-6 uppercase'>Men's</h1>
             <h1 className='  text-white font-bold text-5xl  md:text-7xl space-y-6 uppercase'>Fashion</h1>

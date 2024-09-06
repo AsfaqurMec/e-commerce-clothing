@@ -99,7 +99,7 @@ const Collection = () => {
               <img className='transition-transform duration-300 ease-in-out transform hover:scale-125 w-full h-96'
                 src={latest.images[0]}
                 alt="Shoes" />
-                <h1 className='add absolute hidden group-hover:block bottom-0 bg-black w-full text-white text-center text-3xl py-3'>Add to Cart</h1>
+                {/* <h1 className='add absolute hidden group-hover:block bottom-0 bg-black w-full text-white text-center text-3xl py-3'>Add to Cart</h1> */}
                 <Link to='#'><h1  onClick={()=>handleAdd(latest._id)} className='add absolute  top-3 right-2 bg-white hover:bg-slate-200   md:top-5 md:right-5 text-3xl'><CiHeart className="h-8 w-8"/></h1></Link>
             </figure>
             <div className="card-body">
