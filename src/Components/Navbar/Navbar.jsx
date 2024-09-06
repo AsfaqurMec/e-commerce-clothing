@@ -358,7 +358,7 @@ const [toggle, setToggle] = useState(false);
             
             
             <div className="absolute mt-2 p-10 flex flex-col items-start justify-start gap-5 h-[600px] overflow-y-scroll z-50 bg-white md:w-[40%] rounded-md border-2 mx-auto">
-              <h1>Search Result for {search}</h1>
+              <h1>Search Result for <span className="text-2xl text-cyan-500 font-medium">{search}</span></h1>
               { items?.map(latest => 
              <Link to={`/collections/${latest._id}`} onClick={handle} key={latest._id}><div  className=" flex items-center justify-center w-full">
               <figure className='relative'>

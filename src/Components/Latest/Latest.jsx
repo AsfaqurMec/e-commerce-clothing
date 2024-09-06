@@ -113,7 +113,7 @@ if (user) {
           { latest?.map(latest => 
              <Link to={`/latest/${latest._id}`} key={latest._id}><div  className="card rounded-none group">
               <figure className='relative'>
-                <img className='transition-transform duration-300 ease-in-out transform hover:scale-125 h-64 md:h-full'
+                <img className='transition-transform duration-300 ease-in-out transform hover:scale-125 h-60 md:h-full'
                   src={latest.images[0]}
                   alt="Shoes" />
                {/* <h1 className='add absolute hidden group-hover:block bottom-0 bg-black w-full text-white text-center text-3xl py-3'>Add to Cart</h1> */}
@@ -125,7 +125,7 @@ if (user) {
                   
                   </h1></Link> 
               </figure>
-              <div className="card-body">
+              <div className="card-body p-3 md:p-5">
                 <h2 className="card-title">{latest.title}</h2>
                 <p>${latest.price}</p>
                 

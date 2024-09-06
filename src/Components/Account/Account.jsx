@@ -67,7 +67,7 @@ const Account = () => {
                     </div>
 
                     <div className="w-full">
-                      <h1 className="mb-10 text-xl">Hello {user?.displayName}</h1>
+                      <h1 className="mb-10 text-xl">Hello, <span className="text-2xl text-green-500 font-medium">{user?.displayName}</span></h1>
 
                        <h1 className="mb-5 font-serif text-xl">Order History :</h1>
                        <div className="flex flex-col gap-5 mb-10">
@@ -86,7 +86,7 @@ const Account = () => {
                        <h1 className="font-serif text-xl">Account Details :</h1>
                         <h1 className="text-xl pb-5 border-b-2">Name : <span className="ml-10">{user?.displayName}</span></h1>
                         <h1 className="text-xl pb-5 border-b-2">Email : <span className="ml-10">{user?.email}</span></h1>
-                        <h1 className="text-xl pb-5 border-b-2 mb-10">Address : <span className="ml-10 ">{user?.address}</span></h1>
+                       
                        </div>
                     </div>
                 </div>
