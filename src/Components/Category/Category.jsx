@@ -5,11 +5,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
+import 'swiper/css/navigation';
 import './styles.css';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
+
 
 import womens from '../../assets/women.png'
 import mans from '../../assets/man.png'
@@ -36,13 +37,24 @@ const Category = () => {
         <div className=''>
 
         <Swiper
-        
-        slidesPerView={4}
-        spaceBetween={10}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
+         slidesPerView={3} // Default slides per view on mobile
+         navigation
+         pagination={{ clickable: true }}
+         breakpoints={{
+           640: {
+             slidesPerView: 3,  // 1 slide for devices ≥ 640px
+             spaceBetween: 10,
+           },
+           768: {
+             slidesPerView: 3,  // 2 slides for devices ≥ 768px
+             spaceBetween: 10,
+           },
+           1024: {
+             slidesPerView: 4,  // 3 slides for devices ≥ 1024px
+             spaceBetween: 10,
+           },
+         }}
+        modules={[Navigation,Pagination]}
         className="mySwiper"
       >
         
